@@ -1,7 +1,7 @@
 import React from 'react'
-import { StatusBar, WebView, TouchableOpacity, TextInput, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, Platform, SafeAreaView, Picker, FlatList } from 'react-native'
+import { TouchableHighlight, StatusBar, WebView, TouchableOpacity, TextInput, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, Platform, SafeAreaView, Picker, FlatList } from 'react-native'
 import { Container, Header, Content, Button, Icon, Text, Title, Left, Right, Body, Input, Item, Footer, Accordion, View, FooterTab, Badge, List, ListItem, Tab, Tabs } from 'native-base'
-
+import Modal from "react-native-modal";
 import NavigationService from '@Service/Navigation'
 
 import Style from '@Theme/Style'
@@ -16,9 +16,11 @@ export default class extends React.Component {
         super(props)
 
         this.state = {
+            isMobileModalVisible: false,
+            isEmailModalVisible: false,
             gender: null
         }
-
+        
         this.renderAccordionHeader = this.renderAccordionHeader.bind(this)
         this.renderAccordionContent = this.renderAccordionContent.bind(this)
         this.renderAccordionContentBasic = this.renderAccordionContentBasic.bind(this)
@@ -26,6 +28,13 @@ export default class extends React.Component {
         this.renderAccordionContentContact = this.renderAccordionContentContact.bind(this)
         this.renderAccordionContentSocial = this.renderAccordionContentSocial.bind(this)
     }
+     
+    _toggleMobileModal = () =>
+    this.setState({ isMobileModalVisible: !this.state.isMobileModalVisible });
+
+    _toggleEmailModal = () =>
+    this.setState({ isEmailModalVisible: !this.state.isEmailModalVisible });
+    
     renderAccordionHeader(item, expanded) {
         return (
             <View style={Styles.accordionTab}>
@@ -94,7 +103,9 @@ export default class extends React.Component {
                             </Body>
                             <Right>
                                 <Button transparent>
-                                    <Text style={{color:'#ef752c'}}>Verify It</Text>
+                                    <TouchableOpacity onPress={this._toggleMobileModal}>
+                                        <Text style={{color:'#ef752c'}}>Verify It</Text>
+                                    </TouchableOpacity>
                                 </Button>
                             </Right>
                         </ListItem>
@@ -104,8 +115,11 @@ export default class extends React.Component {
                                 <Text note numberOfLines={1} style={Styles.listContent}>az@taahaa.com</Text>
                             </Body>
                             <Right>
-                                <Button transparent>
-                                    <Text style={{color:'#04d872'}}>Verified</Text>
+                                <Button transparent >
+                                    <TouchableOpacity onPress={this._toggleEmailModal}>
+                                        <Text style={{color:'#04d872'}}>Verified</Text>
+                                    </TouchableOpacity>
+                            
                                 </Button>
                             </Right>
                         </ListItem>
@@ -240,6 +254,51 @@ export default class extends React.Component {
                     </Button>
                 </View>
             </View>
+            <Modal isVisible={this.state.isMobileModalVisible}>
+                <View style={Styles.signBg}>
+                    <View style={Styles.closeIcon}>
+                        <TouchableOpacity onPress={this._toggleMobileModal}>
+                            <Icon type="FontAwesome"  name="close" />                        
+                        </TouchableOpacity>                        
+                    </View>
+                    
+                    <Text style={Styles.textHeader} >Mobile Number Verification</Text>
+                    <Text style={Styles.textDescription} >Enter the OTP sent to your registered mobile number below box</Text>
+
+                    <View style={Styles.textInputView}>
+                        <TextInput style={Styles.textInputVerify} placeholder={'OTP'} />
+                    </View>
+                    
+                    <Button style={Styles.btnVerify} onPress={this._toggleMobileModal}>
+                        <Text style={Styles.verifyBtnText}>{'Verify'.toUpperCase()}</Text>                        
+                    </Button>
+                    <Button style={Styles.btnOTP} onPress={this._toggleMobileModal}>
+                        <Text style={Styles.sendOtpBtnText}>{'Send OTP Again'.toUpperCase()}</Text>                        
+                    </Button>                    
+                </View>
+            </Modal>
+            <Modal isVisible={this.state.isEmailModalVisible}>
+                <View style={Styles.signBg}>
+                    <View style={Styles.closeIcon}>
+                        <TouchableOpacity onPress={this._toggleEmailModal}>
+                            <Icon type="FontAwesome"  name="close" />                        
+                        </TouchableOpacity>                        
+                    </View>
+                    <Text style={Styles.textHeader} >Email ID Verification</Text>
+                    <Text style={Styles.textDescription} >Enter the OTP sent to your registered email id in below box</Text>
+                    <View style={Styles.textInputView}>
+                        <TextInput style={Styles.textInputVerify} placeholder={'OTP'} />
+                    </View>
+                    
+                    <Button style={Styles.btnVerify} onPress={this._toggleEmailModal}>
+                        <Text style={Styles.verifyBtnText}>{'Verify'.toUpperCase()}</Text>                        
+                    </Button>
+                    <Button style={Styles.btnOTP} onPress={this._toggleEmailModal}>
+                        <Text style={Styles.sendOtpBtnText}>{'Send OTP Again'.toUpperCase()}</Text>                        
+                    </Button>
+                    
+                </View>
+            </Modal>
 
         </Container>
     }

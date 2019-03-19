@@ -373,5 +373,152 @@ export default {
     paddingLeft: 21,
     fontSize: 12,
   },
+  signBg: {
+    width: '100%',
+    flex: 0 ,
+    backgroundColor: '#FFF',
+    elevation: 10,
+    shadowOffset: {
+        width: 15,
+        height: 15
+    },
+    shadowColor: '#999',
+    shadowOpacity: 0.1,
+    shadowRadius: 0,
+    ...Platform.select({
+        ios: {
+            shadowOffset: {
+                width: 5,
+                height: 5
+            },
+        },
+    }),
+},
+col: {
+    flexDirection: 'row',
+},
+textInput: {
+    fontFamily: 'Montserrat-Regular',
+    borderBottomWidth: 1,
+    borderColor: '#DDD',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    fontSize: 12,
+    width: '100%',
+},
+textInputHalf: {
+    fontFamily: 'Montserrat-Regular',
+    borderBottomWidth: 1,
+    borderColor: '#DDD',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    fontSize: 12,
+    width: '50%',
+},
+btn: {
+    width: '100%',
+    backgroundColor: '#ED5D02',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingHorizontal: 5,
+    borderRadius: 0,
+    paddingVertical: 15,
+    ...Platform.select({
+        android: {
+            height: 60,
+        },
+    }),
+},
+btnText: {
+    fontFamily: 'Montserrat-SemiBold',
+    color: '#333',
+    fontSize: 14,
+    alignSelf: 'center',
+},
+loginBtnIcon: {
+    color: '#FFF',
+    fontSize: 24,
+},
 
+login: {
+    flex: 1,
+    marginVertical: 30,
+    width: '100%',
+    alignItems: 'center',
+},
+textHeader: {
+  fontFamily: 'Montserrat-Regular',
+  paddingHorizontal: 20,
+  paddingVertical: 15,
+  fontSize: 14,
+  width: '100%',
+  textAlign: 'center',
+  color:'#ef752c',  
+},
+textDescription: {
+  fontFamily: 'Montserrat-Regular',
+  paddingHorizontal: 20,
+  paddingVertical: 15,
+  fontSize: 14,
+  width: '100%',
+  textAlign: 'center',
+  color:'#333',
+  alignSelf: 'center',  
+},
+textInputView: {
+  flex: 0,
+  flexDirection: 'row',
+  justifyContent: 'center',
+},
+textInputVerify: {
+  fontFamily: 'Montserrat-Regular',
+  borderWidth: 1,
+  borderColor: '#DDD',
+  paddingHorizontal: 20,
+  paddingVertical: 15,
+  fontSize: 12,
+  width: '50%',
+  textAlign: 'center',
+},
+verifyBtnText: {
+  flex: 2,
+  alignItems: 'center',
+  fontFamily: 'Montserrat-SemiBold',
+  color: '#FFF',
+  fontSize: 12,
+  textAlign: 'center',
+  alignSelf: 'center',  
+},
+sendOtpBtnText: {
+  flex: 2,
+  alignItems: 'center',
+  fontFamily: 'Montserrat-SemiBold',
+  color: '#FFF',
+  fontSize: 12,
+  textAlign: 'center',
+  alignSelf: 'center',  
+},
+btnVerify: {
+  width: '100%',
+  borderRadius: 0,
+  backgroundColor: '#ef752c',
+  paddingVertical: 10,
+  paddingHorizontal: 5,
+  marginTop: 10,
+  marginBottom: 5,
+  fontSize: 12,
+},
+btnOTP: {
+  width: '100%',
+  borderRadius: 0,
+  backgroundColor: '#39405B',
+  paddingVertical: 20,
+  paddingHorizontal: 5,
+  marginTop: 0,
+  marginBottom: 0,
+  fontSize: 12,
+},
+closeIcon:{
+  alignItems: 'flex-end'
+}
 }
