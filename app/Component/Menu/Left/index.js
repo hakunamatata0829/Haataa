@@ -40,6 +40,11 @@ const datas1 = [
     icon: "search",
   },
   {
+    name: "Cars&Motors",
+    route: "PublicCars",
+    icon: "newspaper-o",    
+  },
+  {
     name: "Members",
     route: "PublicMembers",
     icon: "group",

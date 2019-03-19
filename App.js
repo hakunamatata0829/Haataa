@@ -13,6 +13,7 @@ import PublicMembers from '@Screen/Public/Members'
 import PublicMemberDetails from '@Screen/Public/MemberDetails'
 import PublicAboutUs from '@Screen/Public/AboutUs'
 import PublicContact from '@Screen/Public/Contact'
+import PublicCars from '@Screen/Public/Cars'
 
 import MemberSignIn from '@Screen/Member/SignIn'
 import MemberSignUp from '@Screen/Member/SignUp'
@@ -74,6 +75,9 @@ const AppNav = createStackNavigator(
     },
     PublicContact: {
       screen: PublicContact
+    },
+    PublicCars: {
+      screen: PublicCars
     },
     
 

@@ -114,8 +114,27 @@ export default class extends React.Component {
                         </Picker>
                     </View>
                     <View style={Styles.textView}>
-                        <Label style={Styles.labelPrice}>Location</Label>
-                        <TextInput style={Styles.textInput} placeholder="Location" />
+                        <Label style={Styles.labelPrice}>Location</Label>                         
+                    </View>
+                    <View style={Styles.picker}>
+                        <Picker
+                            selectedValue={this.state.location}
+                            onValueChange={(itemValue, itemIndex) => this.setState({ location: itemValue })}>
+                            <Picker.Item label="All" value="all" />
+                            <Picker.Item label="Albania" value="albania" />
+                            <Picker.Item label="Algeria" value="algeria" />
+                            <Picker.Item label="Andorra" value="andorra" />
+                            <Picker.Item label="Angola" value="angola" />
+                            <Picker.Item label="Antigua and Barbuda" value="antigua and barbuda" />
+                            <Picker.Item label="Argentina" value="argentina" />
+                            <Picker.Item label="Australia" value="australia"  />
+                            <Picker.Item label="Austria" value="austria" />
+                            <Picker.Item label="Azerbaijan" value="azerbaijan" />
+                            <Picker.Item label="The Bahamas" value="the bahamas" />
+                            <Picker.Item label="Bahrain" value="bahrain" />
+                            <Picker.Item label="Bangladesh" value="bangladesh" />
+                            <Picker.Item label="Barbados" value="barbados" style={Styles.pickerText} />
+                        </Picker>
                     </View>
 
 

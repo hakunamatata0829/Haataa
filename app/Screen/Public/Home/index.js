@@ -33,6 +33,12 @@ export default class extends React.Component {
                     <Text style={Style.actionBarText}>{'Properties'.toUpperCase()}</Text>
                 </View>
                 <View style={Style.actionBarRight}>
+                    <Button transparent style={Style.actionBtnRight} onPress={() => {
+                                NavigationService.openDrawer()
+                            }}>
+                            {/* <Icon name='more' color='white' /> */}
+                        <Image source={require('@Asset/images/v_ellipsis.png')} />
+                    </Button>
                 </View>
             </Header>
 

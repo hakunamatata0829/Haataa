@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, TouchableOpacity, TextInput, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, Platform, SafeAreaView, FlatList } from 'react-native'
+import { StatusBar, TouchableOpacity, TextInput, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, Platform, SafeAreaView, FlatList, Picker } from 'react-native'
 import { Container, Header, Content, Button, Icon, Text, Title, Left, Right, Body, Input, Item, Footer, View, FooterTab, Badge } from 'native-base'
 
 import NavigationService from '@Service/Navigation'
@@ -14,6 +14,18 @@ import Styles from '@Screen/Public/Ads/Style'
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
 export default class extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selected: undefined,    
+        };
+    }
+
+    onValueChange(value) {
+        this.setState({
+            selected: value
+        });
+    }
     render() {
         return <Container style={Style.bgMain}>
             <Header style={Style.navigation}>
@@ -40,6 +52,24 @@ export default class extends React.Component {
 
 
             <Content style={Style.layoutInner} contentContainerStyle={Style.layoutContent}>
+                <View style={Styles.picker}>
+                    <Picker
+                        style={Styles.pickers}
+                        selectedValue={this.state.location}
+                        onValueChange={(itemValue, itemIndex) => this.setState({ location: itemValue })}>
+                        <Picker.Item label="All" value="all" style={Styles.pickers}/>
+                        <Picker.Item label="Los Angles" value="losangles" />
+                        <Picker.Item label="Algeria" value="algeria" />   
+                        <Picker.Item label="Albania" value="albania" />
+                        <Picker.Item label="Algeria" value="algeria" />   
+                        <Picker.Item label="Albania" value="albania" />
+                        <Picker.Item label="Algeria" value="algeria" />   
+                        <Picker.Item label="Albania" value="albania" />
+                        <Picker.Item label="Algeria" value="algeria" />   
+                        <Picker.Item label="Albania" value="albania" />
+                        <Picker.Item label="Algeria" value="algeria" />                        
+                    </Picker>
+                </View>
                 <ImageBackground source={require('@Asset/images/bg.png')} imageStyle={'cover'} style={Style.slider}>
                     <View style={Styles.section}>
                         <FlatList
