@@ -27,6 +27,7 @@ import MemberProfile from '@Screen/Member/Profile'
 import MemberMessages from '@Screen/Member/Messages'
 
 import NavigationService from '@Service/Navigation'
+import SplashScreen from 'react-native-splash-screen';
 
 const deviceWidth = Dimensions.get("window").width;
 
@@ -122,6 +123,9 @@ const AppNav = createStackNavigator(
 )
 
 export default class App extends React.Component {
+  componentDidMount(){
+    SplashScreen.hide();
+  }
   render() {
     return (
       <AppNav ref={(r) => {NavigationService.setTopLevelNavigator(r)}}/>
