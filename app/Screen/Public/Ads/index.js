@@ -52,25 +52,26 @@ export default class extends React.Component {
 
 
             <Content style={Style.layoutInner} contentContainerStyle={Style.layoutContent}>
-                <View style={Styles.picker}>
-                    <Picker
-                        style={Styles.pickers}
-                        selectedValue={this.state.location}
-                        onValueChange={(itemValue, itemIndex) => this.setState({ location: itemValue })}>
-                        <Picker.Item label="All" value="all" style={Styles.pickers}/>
-                        <Picker.Item label="Los Angles" value="losangles" />
-                        <Picker.Item label="Algeria" value="algeria" />   
-                        <Picker.Item label="Albania" value="albania" />
-                        <Picker.Item label="Algeria" value="algeria" />   
-                        <Picker.Item label="Albania" value="albania" />
-                        <Picker.Item label="Algeria" value="algeria" />   
-                        <Picker.Item label="Albania" value="albania" />
-                        <Picker.Item label="Algeria" value="algeria" />   
-                        <Picker.Item label="Albania" value="albania" />
-                        <Picker.Item label="Algeria" value="algeria" />                        
-                    </Picker>
-                </View>
+                
                 <ImageBackground source={require('@Asset/images/bg.png')} imageStyle={'cover'} style={Style.slider}>
+                    <View style={Styles.picker}>
+                        <Picker
+                            style={Styles.pickers}
+                            selectedValue={this.state.location}
+                            onValueChange={(itemValue, itemIndex) => this.setState({ location: itemValue })}>
+                            <Picker.Item label="All" value="all" style={Styles.pickers}/>
+                            <Picker.Item label="Los Angles" value="losangles" />
+                            <Picker.Item label="Algeria" value="algeria" />   
+                            <Picker.Item label="Albania" value="albania" />
+                            <Picker.Item label="Algeria" value="algeria" />   
+                            <Picker.Item label="Albania" value="albania" />
+                            <Picker.Item label="Algeria" value="algeria" />   
+                            <Picker.Item label="Albania" value="albania" />
+                            <Picker.Item label="Algeria" value="algeria" />   
+                            <Picker.Item label="Albania" value="albania" />
+                            <Picker.Item label="Algeria" value="algeria" />                        
+                        </Picker>
+                    </View>
                     <View style={Styles.section}>
                         <FlatList
                             data={FEATURED}

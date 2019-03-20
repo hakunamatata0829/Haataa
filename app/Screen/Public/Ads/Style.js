@@ -124,17 +124,20 @@ export default  {
         flexDirection: 'row',
     },
     picker: {
-        paddingVertical: 10,
+        paddingVertical: 0,
         flex: 1,
         backgroundColor: '#f0f0f0',
         paddingLeft: 10,
         paddingVertical: 0,
         fontFamily: 'Montserrat-Regular',
-    },
-    pickers:{
         borderRadius: 10,
         borderWidth: 1,
-        borderColor: '#333',       
+        borderColor: '#999',
+        marginHorizontal: 10,
+        marginVertical:5,
+    },
+    pickers:{
+        color: '#39405B',       
         paddingHorizontal: 20, 
     }
 
