@@ -1,9 +1,9 @@
 import React from 'react'
 import { StatusBar, TouchableOpacity, TextInput, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, Platform, SafeAreaView, FlatList, ToolbarAndroid } from 'react-native'
 import { Container, Header, Content, Button, Icon, Text, Title, Left, Right, Body, Input, Item, Footer, View, FooterTab, Badge } from 'native-base'
-
+import Menu, { MenuItem, MenuDivider, Position } from "react-native-enhanced-popup-menu";
 import NavigationService from '@Service/Navigation'
-
+import {Text as TextR} from 'react-native';
 import FEATURED from './Featured'
 import RECENT from './Recent'
 import TOPCITIES from './TopCities'
@@ -17,7 +17,16 @@ import Styles from '@Screen/Public/Home/Style'
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
 export default class extends React.Component {
+    
     render() {
+        let textRef = React.createRef();
+        let menuRef = null;
+        
+        const setMenuRef = ref => menuRef = ref;
+        const hideMenu = () => menuRef.hide();
+        const showMenu = () => menuRef.show(textRef.current, stickTo = Position.TOP_RIGHT);
+        const onPress = () => showMenu();
+
         return <Container>
             <Header style={Style.navigation}>
                 <StatusBar backgroundColor="#39405B" animated barStyle="light-content" />
@@ -33,15 +42,34 @@ export default class extends React.Component {
                     <Text style={Style.actionBarText}>{'Properties'.toUpperCase()}</Text>
                 </View>
                 <View style={Style.actionBarRight}>
-                    <Button transparent style={Style.actionBtnRight} onPress={() => {
-                                NavigationService.openDrawer()
-                            }}>
+                    <Button transparent style={Style.actionBtnRight} onPress={onPress}>
                             {/* <Icon name='more' color='white' /> */}
                         <Image source={require('@Asset/images/v_ellipsis.png')} />
                     </Button>
                 </View>
             </Header>
-
+            <TextR
+                ref={textRef}
+                style={{ fontSize: 20, textAlign: "center",  backgroundColor:'#39405B'}}
+            ></TextR>
+            <Menu
+                ref={setMenuRef} style={Styles.container}
+            >
+                <View onPress={hideMenu}  style={Styles.container}>
+                    <Image source={require('@Asset/images/free_ads.png')} resizeMode={'cover'} style={Styles.btnImg2} />
+                    <Text style={Styles.btnText2}>Post Free Ad</Text>
+                </View>
+                <MenuDivider />
+                <View onPress={hideMenu} style={Styles.container}>
+                    <Image source={require('@Asset/images/paid_ads.png')} resizeMode={'cover'} style={Styles.btnImg2} />
+                    <Text style={Styles.btnText2}>Post Paid Ad</Text>
+                </View>
+                <MenuDivider />
+                <View onPress={hideMenu} style={Styles.container}>                    
+                    <Image source={require('@Asset/images/post_job.png')} resizeMode={'cover'} style={Styles.btnImg2} />
+                    <Text style={Styles.btnText2}>Post Free Job</Text>
+                </View>
+            </Menu>
 
             <Content style={Style.layoutInner} contentContainerStyle={Style.layoutContent}>
 

@@ -110,11 +110,32 @@ export default {
     btnImg: {
         marginBottom: 0,
     },
+    
     btnText: {
         color: '#333',
         fontFamily: 'Montserrat-SemiBold',
         fontSize: 12,
         textAlign: 'center'
+    },
+    container:{
+        flexDirection: 'row',
+        paddingHorizontal:10,
+        paddingVertical:5,        
+    },
+    btnImg2: {
+        marginBottom: 0,
+        marginTop: 0,
+        paddingLeft:0,
+        paddingRight:5,
+        height:33,
+        width:33
+    },
+    btnText2: {
+        color: '#39405B',
+        marginLeft: 5,
+        fontSize: 14,
+        fontFamily: 'Montserrat-SemiBold',
+        paddingTop:8
     },
 
     

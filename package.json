@@ -16,6 +16,7 @@
     "react-native-app-intro-slider": "^1.0.1",
     "react-native-collapsible": "^0.13.0",
     "react-native-custom-radio-group": "^1.0.1",
+    "react-native-enhanced-popup-menu": "^0.6.1",
     "react-native-modal": "^9.0.0",
     "react-native-picker-select": "^4.2.0",
     "react-native-vector-icons": "^5.0.0",
