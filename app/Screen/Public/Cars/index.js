@@ -92,7 +92,7 @@ export default class extends React.Component {
                         showsHorizontalScrollIndicator={false}
                         style={Styles.featureList}
                         renderItem={({ item, separators }) => (
-                            <TouchableOpacity style={Styles.item} underlayColor='transparent' onPress={() => { NavigationService.navigate('PublicAdsDetail') }}>
+                            <TouchableOpacity style={Styles.item} underlayColor='transparent'  onPress={() => { NavigationService.navigate('PublicAdsDetail') }}>
                                 <View>
                                     <View>
                                         <Image source={{ uri: item.image }} style={Styles.itemImg} />
