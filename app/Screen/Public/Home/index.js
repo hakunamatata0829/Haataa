@@ -39,7 +39,7 @@ export default class extends React.Component {
                     </Button>
                 </View>
                 <View style={Style.actionBarMiddle}>
-                    <Text style={Style.actionBarText}>{'Properties'.toUpperCase()}</Text>
+                    <Text style={Style.actionBarText}>{'Home'.toUpperCase()}</Text>
                 </View>
                 <View style={Style.actionBarRight}>
                     <Button transparent style={Style.actionBtnRight} onPress={onPress}>
@@ -69,6 +69,7 @@ export default class extends React.Component {
                     <Image source={require('@Asset/images/post_job.png')} resizeMode={'cover'} style={Styles.btnImg2} />
                     <Text style={Styles.btnText2}>Post Free Job</Text>
                 </View>
+                
             </Menu>
 
             <Content style={Style.layoutInner} contentContainerStyle={Style.layoutContent}>
@@ -147,6 +148,27 @@ export default class extends React.Component {
                         }}>
                             <Image source={require('@Asset/images/btn-services.png')} style={Styles.btnImg} />
                             <Text style={Styles.btnText}>Services</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={Styles.btnBoxBot} onPress={() => {
+                            NavigationService.navigate('PublicShopping')
+                        }}>
+                            <Image source={require('@Asset/images/btn-localshop.png')} style={Styles.btnImg} />
+                            <Text style={Styles.btnText}>Local Shopping</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={Styles.btnBoxLast} onPress={() => {
+                            NavigationService.navigate('PublicHotel')
+                        }}>
+                            <Image source={require('@Asset/images/btn-motel.png')} style={Styles.btnImg} />
+                            <Text style={Styles.btnText}>Hotel, Motel, Guest House</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={Styles.btnBoxLast} onPress={() => {
+                            NavigationService.navigate('PublicTravel')
+                        }}>
+                            <Image source={require('@Asset/images/btn-travel.png')} style={Styles.btnImg} />
+                            <Text style={Styles.btnText}>Travel & Amusement</Text>
                         </TouchableOpacity>
                     </View>
 

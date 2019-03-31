@@ -24,7 +24,7 @@ const datas1 = [
     icon: "home",
   },
   {
-    name: "Ads",
+    name: "My Ads",
     route: "PublicAds",
     icon: "news",
     type: "Entypo",
@@ -40,9 +40,14 @@ const datas1 = [
     icon: "search",
   },
   {
-    name: "Cars&Motors",
+    name: "Cars & Motors",
     route: "PublicCars",
     icon: "newspaper-o",    
+  },
+  {
+    name: "Properties",
+    route: "PublicProperties",
+    icon: "group",    
   },
   {
     name: "Members",
@@ -55,7 +60,7 @@ const datas1 = [
     icon: "user-circle-o",
   },
   {
-    name: "About oClassify",
+    name: "About Taahaa",
     route: "PublicAboutUs",
     icon: "info-circle"
   },

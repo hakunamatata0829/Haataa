@@ -94,7 +94,7 @@ export default class extends React.Component {
                                 NavigationService.navigate('MemberSettings')
                             }}>
                                 <Image source={require('@Asset/images/buyer_calling_ico.png')} style={Styles.btnImg} />
-                                <Text style={Styles.btnText}>Direct Buyer- Seller Calling</Text>
+                                <Text style={Styles.btnText}>Direct Buyer-Seller Calling</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={Styles.btnBoxBot} onPress={() => {
                                 NavigationService.navigate('MemberSettings')

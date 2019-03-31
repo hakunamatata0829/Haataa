@@ -14,6 +14,13 @@ import PublicMemberDetails from '@Screen/Public/MemberDetails'
 import PublicAboutUs from '@Screen/Public/AboutUs'
 import PublicContact from '@Screen/Public/Contact'
 import PublicCars from '@Screen/Public/Cars'
+import PublicProperties from '@Screen/Public/Properties'
+import PublicShopping from '@Screen/Public/Shopping'
+import PublicTravel from '@Screen/Public/Travel'
+import PublicHotel from '@Screen/Public/Hotel'
+import PublicShopAds from '@Screen/Public/ShopAds'
+import PublicShopAdDetails from '@Screen/Public/ShopAdDetails'
+
 
 import MemberSignIn from '@Screen/Member/SignIn'
 import MemberSignUp from '@Screen/Member/SignUp'
@@ -80,7 +87,29 @@ const AppNav = createStackNavigator(
     PublicCars: {
       screen: PublicCars
     },
-    
+    PublicProperties: {
+      screen: PublicProperties
+    },
+    PublicShopping: {
+      screen: PublicShopping
+    },
+    PublicTravel: {
+      screen: PublicTravel
+    },
+    PublicHotel: {
+      screen: PublicHotel
+    },
+    PublicShopAds: {
+      screen: PublicShopAds
+    },
+    PublicShopAds: {
+      screen: PublicShopAds
+    },
+    PublicShopAdDetails: {
+      screen: PublicShopAdDetails
+    },
+
+
 
     MemberSignUp: {
       screen: MemberSignUp

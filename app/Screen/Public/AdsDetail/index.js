@@ -72,7 +72,7 @@ export default class extends React.Component {
 
             <Content style={Style.layoutInner} contentContainerStyle={Style.layoutContent}>
 
-                <ImageBackground source={{ uri: ('https://cdn.trangcongnghe.com/uploads/posts/2017-07/can-canh-siecircu-xe-audi-r8-spyder-v10-plus-do-ruc-bang-xuong-bang-thit_1.jpg') }} imageStyle={'cover'} style={Styles.coverImg}>
+                {/* <ImageBackground source={{ uri: ('https://cdn.trangcongnghe.com/uploads/posts/2017-07/can-canh-siecircu-xe-audi-r8-spyder-v10-plus-do-ruc-bang-xuong-bang-thit_1.jpg') }} imageStyle={'cover'} style={Styles.coverImg}>
                     <View style={Style.actionBarIn}>
                         <Button transparent style={Style.actionBarBtn} onPress={() => {
                             NavigationService.navigate('PublicAds')
@@ -80,9 +80,9 @@ export default class extends React.Component {
                             <Icon active name='arrow-left' style={Style.textWhite} type="MaterialCommunityIcons" />
                         </Button>
                     </View>
-                </ImageBackground>
+                </ImageBackground> */}
 
-                <View style={Styles.section}>
+                {/* <View style={Styles.section}>
                     <Text style={Styles.title}>Audi R8</Text>
                     <View style={Styles.locationTop}>
                         <Icon active name='map-marker-radius' style={Styles.locationTopIcon} type="MaterialCommunityIcons" />
@@ -113,7 +113,7 @@ export default class extends React.Component {
                             <Icon name="mail" />
                         </Button>
                     </Fab>
-                </View>
+                </View> */}
 
 
                 <ImageBackground source={require('@Asset/images/shadow.png')} imageStyle={'cover'} style={Styles.shadow} />
@@ -298,14 +298,14 @@ export default class extends React.Component {
                                 <Icon name="mail" type="Entypo" style={Styles.infoIcon} />
                                 <View>
                                     <Text style={Styles.infoHeader}>{'Email'.toUpperCase()}</Text>
-                                    <Text style={Styles.infoDesc}>info@oclassify.com</Text>
+                                    <Text style={Styles.infoDesc}>info@Taahaa.com</Text>
                                 </View>
                             </ListItem>
                             <ListItem style={[Styles.infoItem, Styles.infoItemLast]}>
                                 <Icon name="web" type="MaterialCommunityIcons" style={Styles.infoIcon} />
                                 <View>
                                     <Text style={Styles.infoHeader}>{'Website'.toUpperCase()}</Text>
-                                    <Text style={Styles.infoDesc}>www.oclassify.com</Text>
+                                    <Text style={Styles.infoDesc}>www.Taahaa.com</Text>
                                 </View>
                             </ListItem>
                         </List>

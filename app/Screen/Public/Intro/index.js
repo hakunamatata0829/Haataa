@@ -29,7 +29,7 @@ const slides = [
     imageStyle: styles.image,
   },
   {
-    title: 'Buy/Sell With Us ',
+    title: 'Buy/Sell/Rent with us',
     text: 'We earn money from services, not from users',
     image: require('@Asset/images/3.png'),
     imageStyle: styles.image,

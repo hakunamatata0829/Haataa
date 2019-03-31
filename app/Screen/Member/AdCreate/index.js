@@ -68,7 +68,10 @@ export default class extends React.Component {
                                 <Picker.Item label="Household" value="household" />
                                 <Picker.Item label="Pets" value="pets" />
                                 <Picker.Item label="Jobs" value="jobs" />
-                                <Picker.Item label="Services" value="services" style={Styles.pickerText} />
+                                <Picker.Item label="Services" value="Services" />
+                                <Picker.Item label="Local Shopping" value="Local Shopping" />
+                                <Picker.Item label="Hotel, Motel Guest house" value="Hotel, Motel Guest house" />
+                                <Picker.Item label="Travel & Amusement" value="Travel & Amusement" />                                
                             </Picker>
                         </View>
                     </View>

@@ -59,14 +59,14 @@ export default class extends React.Component {
                                 <Icon name="mail" type="Entypo" style={Styles.infoIcon} />
                                 <View>
                                     <Text style={Styles.infoHeader}>{'Email'.toUpperCase()}</Text>
-                                    <Text style={Styles.infoDesc}>info@oclassify.com</Text>
+                                    <Text style={Styles.infoDesc}>info@Taahaa.com</Text>
                                 </View>
                             </ListItem>
                             <ListItem style={[Styles.infoItem, Styles.infoItemLast]}>
                                 <Icon name="web" type="MaterialCommunityIcons" style={Styles.infoIcon} />
                                 <View>
                                     <Text style={Styles.infoHeader}>{'Website'.toUpperCase()}</Text>
-                                    <Text style={Styles.infoDesc}>www.oclassify.com</Text>
+                                    <Text style={Styles.infoDesc}>www.Taahaa.com</Text>
                                 </View>
                             </ListItem>
                         </List>

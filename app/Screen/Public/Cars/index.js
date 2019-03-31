@@ -26,7 +26,7 @@ export default class extends React.Component {
                     </Button>
                 </View>
                 <View style={Style.actionBarMiddle}>
-                    <Text style={Style.actionBarText}>{'Car & Motors'.toUpperCase()}</Text>
+                    <Text style={Style.actionBarText}>{'Cars & Motors'.toUpperCase()}</Text>
                 </View>
                 <View style={Style.actionBarRight}>
                 </View>

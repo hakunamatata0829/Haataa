@@ -60,16 +60,12 @@ export default class extends React.Component {
                             selectedValue={this.state.location}
                             onValueChange={(itemValue, itemIndex) => this.setState({ location: itemValue })}>
                             <Picker.Item label="All" value="all" style={Styles.pickers}/>
-                            <Picker.Item label="Los Angles" value="losangles" />
-                            <Picker.Item label="Algeria" value="algeria" />   
-                            <Picker.Item label="Albania" value="albania" />
-                            <Picker.Item label="Algeria" value="algeria" />   
-                            <Picker.Item label="Albania" value="albania" />
-                            <Picker.Item label="Algeria" value="algeria" />   
-                            <Picker.Item label="Albania" value="albania" />
-                            <Picker.Item label="Algeria" value="algeria" />   
-                            <Picker.Item label="Albania" value="albania" />
-                            <Picker.Item label="Algeria" value="algeria" />                        
+                            <Picker.Item label="Los Angles" value="Los Angles" />
+                            <Picker.Item label="New York" value="New York" />
+                            <Picker.Item label="Chicago" value="Chicago" />
+                            <Picker.Item label="Boston" value="Boston" />                            
+                            <Picker.Item label="New Orleans" value="New Orleans" />
+
                         </Picker>
                     </View>
                     <View style={Styles.section}>
