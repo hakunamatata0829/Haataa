@@ -43,16 +43,12 @@ export default class extends React.Component {
             <Content style={Style.layoutInner} contentContainerStyle={Style.layoutContent}>
 
                 <ImageBackground source={require('@Asset/images/bg.png')} imageStyle={'cover'} style={Styles.slider}>
-
-                    
-
-
                     <View style={Styles.sectionGrey}>
                         <View style={Styles.headerBg}>
                             <Icon name="map-marker-multiple" type="MaterialCommunityIcons" style={Styles.headerIcon} />
-                            <Text style={Styles.sHeader}>{'Ad Properties'.toUpperCase()}</Text>
+                            <Text style={Styles.sHeader}>{'Ad Travel & Amusement'.toUpperCase()}</Text>
                             <Right>
-                                <Button small rounded transparent onPress={() => { NavigationService.navigate('PublicAds') }}>
+                                <Button small rounded transparent onPress={() => { NavigationService.navigate('PublicTravelAds') }}>
                                     <Image source={require('@Asset/images/dot.png')} />
                                 </Button>
                             </Right>
@@ -61,7 +57,7 @@ export default class extends React.Component {
                         <View style={Styles.city}>
                             <View style={Styles.btnList}>
                                 <TouchableOpacity style={Styles.btnCityMain} onPress={() => {
-                                    NavigationService.navigate('PublicAds')
+                                    NavigationService.navigate('PublicTravelAds')
                                 }}>
                                     <Image source={{ uri: 'https://4.bp.blogspot.com/-B43r-cUpNYQ/VP3X7zvyLzI/AAAAAAAACsw/3SBFTZVWTuk/s1600/7428079.jpg' }} resizeMode={'cover'} style={Styles.btnCityImg} />
                                     <View style={Styles.btnCityBgMain} />
@@ -73,7 +69,7 @@ export default class extends React.Component {
                             </View>
                             <View style={Styles.btnList}>
                                 <TouchableOpacity style={Styles.btnCity} onPress={() => {
-                                    NavigationService.navigate('PublicAds')
+                                    NavigationService.navigate('PublicTravelAds')
                                 }}>
                                     <Image source={{ uri: 'https://i2-prod.birminghampost.co.uk/business/commercial-property/article13376659.ece/ALTERNATES/s615/Hotel-la-Tour-1.jpg' }} resizeMode={'cover'} style={Styles.btnCityImg} />
                                     <View style={Styles.btnCityBg} />
@@ -83,7 +79,7 @@ export default class extends React.Component {
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={Styles.btnCity} onPress={() => {
-                                    NavigationService.navigate('PublicAds')
+                                    NavigationService.navigate('PublicTravelAds')
                                 }}>
                                     <Image source={{ uri: 'https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2018/05/things-to-do-in-san-francisco-cover-picture.jpg' }} resizeMode={'cover'} style={Styles.btnCityImg} />
                                     <View style={Styles.btnCityBg} />
@@ -98,7 +94,7 @@ export default class extends React.Component {
                         <View style={Styles.city}>
                             <View style={Styles.btnList}>
                                 <TouchableOpacity style={Styles.btnCity} onPress={() => {
-                                    NavigationService.navigate('PublicAds')
+                                    NavigationService.navigate('PublicTravelAds')
                                 }}>
                                     <Image source={{ uri: 'https://d2t1047w253zzm.cloudfront.net/pm-cities/chicago-il-grant-park-apartments-for-rent.jpg' }} resizeMode={'cover'} style={Styles.btnCityImg} />
                                     <View style={Styles.btnCityBg} />
@@ -108,7 +104,7 @@ export default class extends React.Component {
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={Styles.btnCity} onPress={() => {
-                                    NavigationService.navigate('PublicAds')
+                                    NavigationService.navigate('PublicTravelAds')
                                 }}>
                                     <Image source={{ uri: 'https://media-cdn.tripadvisor.com/media/photo-s/0d/f5/b9/e8/boston-freedom-trail.jpg' }} resizeMode={'cover'} style={Styles.btnCityImg} />
                                     <View style={Styles.btnCityBg} />
@@ -120,7 +116,7 @@ export default class extends React.Component {
                             </View>
                             <View style={Styles.btnList}>
                                 <TouchableOpacity style={Styles.btnCityMain} onPress={() => {
-                                    NavigationService.navigate('PublicAds')
+                                    NavigationService.navigate('PublicTravelAds')
                                 }}>
                                     <Image source={{ uri: 'https://www.tripsavvy.com/thmb/RACn8CwaCqilw1nPIZbdkseVf_k=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/streetcar-in-new-orleans-699112771-5a98de0d1f4e130036d2e855.jpg' }} resizeMode={'cover'} style={Styles.btnCityImg} />
                                     <View style={Styles.btnCityBgMain} />

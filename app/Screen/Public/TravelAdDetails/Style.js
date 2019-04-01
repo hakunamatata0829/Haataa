@@ -105,8 +105,7 @@ export default {
   overview: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 0,
-    paddingBottom: 20,
+    paddingVertical: 20,
   },
   overviewTitle: {
     flex: 1,
@@ -355,10 +354,6 @@ export default {
     flexDirection: 'row',
     marginBottom: 15,
   },
-  headerIcon: {
-    fontSize: 24,
-    color: '#333',
-  },
   sHeader: {
     color: '#333',
     marginLeft: 3,
@@ -399,19 +394,8 @@ export default {
     fontSize: 18,
     marginLeft: 10,
   },
-  itemPrice: {
-    color: '#333',
-    fontSize: 14,
-    fontFamily: 'Montserrat-SemiBold',
-    paddingHorizontal: 20,
-  },
-  itemLocation: {
-    color: '#999',
-    fontSize: 11,
-    fontFamily: 'Montserrat-Regular',
-    marginBottom: 10,
-    paddingHorizontal: 20,
-  },
+ 
+  
   crv: {
     borderRadius: 8,
   },
@@ -499,7 +483,7 @@ export default {
 
   itemTitle: {
     color: '#39405B',
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: 'Montserrat-SemiBold',    
   },
 
@@ -571,18 +555,28 @@ export default {
     marginLeft: 10,
     marginTop: 0,
   },
-  picker: {
-    flex: 1,
-    backgroundColor: '#DDD',
-    color: '#39405B',
-    paddingLeft: 10,
-    paddingTop: 10,
-    paddingBottom: 10,
-    fontFamily: 'Montserrat-Regular',
-    
-    
-},
-pickers:{
+  itemPrice: {
+    color: '#333',
+    fontSize: 14,
+    fontFamily: 'Montserrat-SemiBold',
+    paddingHorizontal: 0,
+    paddingTop:10,
+    paddingBottom:20,
+  },
+  itemLocation: {
+      color: '#999',
+      fontSize: 11,
+      fontFamily: 'Montserrat-Regular',
+      marginBottom: 10,
+      paddingHorizontal: 10,
+  },
+  headerIcon:{
+      color: '#333',
+      marginRight: 2,
+      marginTop: 2,
+      fontSize: 14,
+  },
+  pickers:{
     color: '#39405B',       
     paddingHorizontal: 20, 
 },
@@ -695,5 +689,4 @@ signBg: {
       color: '#39405B',       
       paddingHorizontal: 20, 
   }
-
 }

@@ -1,7 +1,8 @@
 import React from 'react'
+
 import { StatusBar, TouchableOpacity, TextInput, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, Platform, SafeAreaView, FlatList, Picker } from 'react-native'
 import { Container, Header, Content, Button, Icon, Text, Title, Left, Right, Body, Input, Item, Footer, View, FooterTab, Badge } from 'native-base'
-
+import Select from 'react-select'
 import NavigationService from '@Service/Navigation'
 
 import FEATURED from './Featured'
@@ -10,8 +11,14 @@ import Modal from "react-native-modal";
 import Style from '@Theme/Style'
 import Styles from '@Screen/Public/ShopAds/Style'
 
+
 //const {width, height} = Dimensions.get('window')
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+const options = [
+    { value: 'mobile', label: 'Mobile' },
+    { value: 'web', label: 'Web' },
+    { value: 'device', label: 'Device' }
+  ]
 
 export default class extends React.Component {
     constructor(props) {
@@ -20,6 +27,7 @@ export default class extends React.Component {
             selected: undefined,    
             isFilterModalVisible: false,
             price:'low',
+            selectedOption: null,
         };
     }
 
@@ -28,11 +36,16 @@ export default class extends React.Component {
             selected: value
         });
     }
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption });
+        console.log(`Option selected:`, selectedOption);
+    }
 
     _toggleMobileModal = () =>
     this.setState({ isFilterModalVisible: !this.state.isFilterModalVisible });
 
     render() {
+        const { selectedOption } = this.state;
         return <Container style={Style.bgMain}>
             <Header style={Style.navigation}>
                 <StatusBar backgroundColor="#39405B" animated barStyle="light-content" />
@@ -48,9 +61,7 @@ export default class extends React.Component {
                     <Text style={Style.actionBarText}>{'Electronics'.toUpperCase()}</Text>
                 </View>
                 <View style={Style.actionBarRight}>
-                    <Button transparent style={Style.actionBtnRight} onPress={() => {
-                        NavigationService.navigate('PublicAdsSearch')
-                    }}>
+                    <Button transparent style={Style.actionBtnRight} onPress={this._toggleMobileModal}>
                         <Icon active name='search' style={Style.actionIcon} type="FontAwesome" />
                     </Button>
                 </View>
@@ -58,47 +69,9 @@ export default class extends React.Component {
 
 
             <Content style={Style.layoutInner} contentContainerStyle={Style.layoutContent}>
-                <Modal isVisible={this.state.isFilterModalVisible}>
-                    <View style={Styles.signBg}>
-                        <View style={Styles.modalTopRow}>
-                            <View style={{ flexDirection: 'row'}}>
-                                <Icon type="FontAwesome"  name="filter" style={{color: '#39405B'}}/>
-                                <Text style={Styles.modalTitle}>Product Filter</Text>
-                            </View>                            
-                            <View style={Styles.modalButton}>
-                                <Button style={Styles.btnApply} onPress={this._toggleMobileModal}>
-                                    <Text style={Styles.applyBtnText}>{'apply'.toUpperCase()}</Text>                        
-                                </Button>
-                            </View>
-                        </View>
-                        <View style={Styles.modalRow}>
-                            <Text style={Styles.modalLabel}>Price</Text>
-                            <View style={Styles.formPicker}>
-                                <Picker
-                                    selectedValue={this.state.price}
-                                    onValueChange={(itemValue, itemIndex) => this.setState({ price: itemValue })}>
-                                    <Picker.Item label="Low" value="low" style={Styles.pickerText} />
-                                    <Picker.Item label="Medium" value="medium" />
-                                    <Picker.Item label="High" value="high" />
-                                </Picker>
-                            </View>
-                        </View>                            
-                        <View style={Styles.modalRow}>
-                            <Text style={Styles.modalLabel}>Product Categories</Text>
-                            <View style={Styles.formPicker}>
-                                <Picker
-                                    selectedValue={this.state.price}
-                                    onValueChange={(itemValue, itemIndex) => this.setState({ price: itemValue })}>
-                                    <Picker.Item label="Low" value="low" style={Styles.pickerText} />
-                                    <Picker.Item label="Medium" value="medium" />
-                                    <Picker.Item label="High" value="high" />
-                                </Picker>
-                            </View>
-                        </View>                            
-                    </View>
-                </Modal>
-                <ImageBackground source={require('@Asset/images/bg.png')} imageStyle={'cover'} style={Style.slider}>
-                    <View style={Styles.picker}>
+                
+                <ImageBackground source={require('@Asset/images/bg_white.png')} imageStyle={'cover'} style={Style.slider}>
+                    <View style={{backgroundColor:'#f0f0f0', paddingVertical:5,paddingHorizontal:10}}>
                         <Text style={{color: '#39405B'}} >1,200 Electronics</Text>
                     </View>
                     <View style={Styles.section}>
@@ -150,6 +123,44 @@ export default class extends React.Component {
                     </Button>
                 </FooterTab>
             </Footer>
+            <Modal isVisible={this.state.isFilterModalVisible}>
+                    <View style={Styles.signBg}>
+                        <View style={Styles.modalTopRow}>
+                            <View style={{ flexDirection: 'row'}}>
+                                <Icon type="FontAwesome"  name="filter" style={{color: '#39405B'}}/>
+                                <Text style={Styles.modalTitle}>Product Filter</Text>
+                            </View>                            
+                            <View style={Styles.modalButton}>
+                                <Button style={Styles.btnApply} onPress={this._toggleMobileModal}>
+                                    <Text style={Styles.applyBtnText}>{'apply'.toUpperCase()}</Text>                        
+                                </Button>
+                            </View>
+                        </View>
+                        <View style={Styles.modalRow}>
+                            <Text style={Styles.modalLabel}>Price</Text>
+                            <View style={Styles.formPicker}>
+                                <Picker
+                                    selectedValue={this.state.price}
+                                    onValueChange={(itemValue, itemIndex) => this.setState({ price: itemValue })}>
+                                    <Picker.Item label="Low" value="low" style={Styles.pickerText} />
+                                    <Picker.Item label="Medium" value="medium" />
+                                    <Picker.Item label="High" value="high" />
+                                </Picker>
+                            </View>
+                        </View>                            
+                        <View style={Styles.modalRow}>
+                            <Text style={Styles.modalLabel}>Product Categories</Text>
+                            <View>
+                                 {/* <Select 
+                                    value={selectedOption}
+                                    onChange={this.handleChange}
+                                    options={options} 
+                                /> */}
+                                <TextInput style={{borderRadius:5, borderWidth:1,borderColor: '#DDD'}} placeholder={'Enter Category'} />
+                            </View>
+                        </View>                            
+                    </View>
+                </Modal>
         </Container>
     }
 }

@@ -13,7 +13,8 @@ export default  {
     section: {
         flex: 1,
         marginHorizontal: 10,
-        marginVertical: 20,
+        marginVertical: 10,
+        backgroundColor:'#fff'
     },
     itemList: {
         flexDirection: 'row',
@@ -61,9 +62,9 @@ export default  {
     },
     itemTitle: {
         color: '#39405B',
-        fontSize: 12,
+        fontSize: 14,
         fontFamily: 'Montserrat-SemiBold',
-        paddingHorizontal: 20,
+        paddingHorizontal: 5,
     },
     itemPrice: {
         color: '#ED5D02',
@@ -92,22 +93,28 @@ export default  {
     },
     itemIcon: {
         color: '#333',
-        marginRight: 5,
-        marginTop: 7,
-        fontSize: 8,
+        marginRight: 4,
+        marginTop: 6,
+        fontSize: 6,
+    },
+    headerIcon:{
+        color: '#333',
+        marginRight: 2,
+        marginTop: 2,
+        fontSize: 12,
     },
     itemDate: {
         color: '#999',
         fontFamily: 'Montserrat-Regular',
         fontSize: 12,
-        marginRight: 20,
+        marginRight: 5,
     },
     itemPosted: {
-        marginTop: 10,
-        color: '#999',
+        marginTop: 0,
+        color: '#333',
         fontFamily: 'Montserrat-Regular',
-        fontSize: 11,
-        paddingHorizontal: 20,
+        fontSize: 14,
+        paddingHorizontal: 5,
         flexDirection: 'row',
     },
     itemLeft: {
@@ -170,6 +177,7 @@ export default  {
         paddingLeft: 10,
         paddingRight: 30,
         paddingVertical: 15,
+        paddingBottom:0,
         width:'100%',
         justifyContent:'space-between'
     },
@@ -211,7 +219,7 @@ export default  {
     modalRow: {
         paddingLeft: 10,
         paddingRight: 15,
-        paddingVertical: 15,
+        paddingVertical: 5,
         width:'100%',        
     },
     modalLabel: {
@@ -220,7 +228,6 @@ export default  {
         fontFamily: 'Montserrat-SemiBold',
         paddingHorizontal: 5,
         paddingTop:5,
-        marginBottom:5,
     },
 
     formPicker: {
@@ -250,6 +257,15 @@ export default  {
     pickers:{
         color: '#39405B',       
         paddingHorizontal: 20, 
-    }
+    },
+
+    badgeRight:{
+        backgroundColor:'#01c061',
+        color:'#f0f0f0',
+        paddingHorizontal: 5,
+        borderRadius:5
+    },
+    
+
     
  }

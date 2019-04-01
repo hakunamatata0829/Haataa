@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, WebView, TouchableOpacity, TextInput, ToolbarAndroid, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, Platform, SafeAreaView, FlatList, TouchableHighlight,Picker } from 'react-native'
+import { StatusBar, WebView, TouchableOpacity, TextInput, ToolbarAndroid, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, Platform, SafeAreaView, FlatList, Picker, TouchableHighlight } from 'react-native'
 import { Container, Header, Content, Button, Icon, Text, Title, Left, Right, Body, Input, Item, Footer, View, FooterTab, Badge, List, ListItem, Tab, Tabs, Fab } from 'native-base'
 
 import NavigationService from '@Service/Navigation'
@@ -10,7 +10,7 @@ import SIMILAR from './Similar'
 
 
 import Style from '@Theme/Style'
-import Styles from '@Screen/Public/ShopAdDetails/Style'
+import Styles from '@Screen/Public/TravelAdDetails/Style'
 
 import SwiperFlatList from 'react-native-swiper-flatlist';
 
@@ -45,6 +45,13 @@ export default class extends React.Component {
         this.closeGallery = this.closeGallery.bind(this)
         this.openGallery = this.openGallery.bind(this)
     }
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption });
+        console.log(`Option selected:`, selectedOption);
+    }
+
+    _toggleMobileModal = () =>
+    this.setState({ isFilterModalVisible: !this.state.isFilterModalVisible });
 
     closeGallery() {
         const modalGallery = { ...this.state.modalGallery }
@@ -69,14 +76,6 @@ export default class extends React.Component {
         })
     }
 
-    handleChange = (selectedOption) => {
-        this.setState({ selectedOption });
-        console.log(`Option selected:`, selectedOption);
-    }
-
-    _toggleMobileModal = () =>
-    this.setState({ isFilterModalVisible: !this.state.isFilterModalVisible });
-
     render() {
         return <Container style={Style.bgMain}>
             <StatusBar backgroundColor="#39405B" animated barStyle="light-content" />
@@ -84,14 +83,14 @@ export default class extends React.Component {
                 <StatusBar backgroundColor="#39405B" animated barStyle="light-content" />
 
                 <View style={Style.actionBarLeft}>
-                    <Button transparent style={Style.actionBarBtn} onPress={() => {
-                        NavigationService.navigate('PublicShopAds')
+                <Button transparent style={Style.actionBarBtn} onPress={() => {
+                        NavigationService.navigate('PublicTravelAds')
                     }}>
                         <Icon active name='arrow-left' style={Style.textWhite} type="MaterialCommunityIcons" />
                     </Button>
                 </View>
                 <View style={Style.actionBarMiddle}>
-                    <Text style={Style.actionBarText}>{'Product Detail'}</Text>
+                    <Text style={Style.actionBarText}>{'Travel & Amusement Detail'}</Text>
                 </View>
                 <View style={Style.actionBarRight}>
                     <Button transparent style={Style.actionBtnRight} onPress={this._toggleMobileModal}>
@@ -126,15 +125,19 @@ export default class extends React.Component {
 
 
                 <ImageBackground source={require('@Asset/images/shadow.png')} imageStyle={'cover'} style={Styles.shadow} />
-                 <View style={Styles.overview}>
-                    <Text style={Styles.itemTitle}>Redmi Note 6 Pro (Rose Gold, 64 GB)</Text>
-                    <Text style={{color:'#ED5D02'}}>₹11,999</Text>
+                
+                <View style={Styles.overview}>
+                    <Text style={Styles.itemTitle}>National Park Adventure - Las Vegas Deep {'\n'}Vallery</Text>
+                    <Text style={Styles.itemPrice}>
+                        <Icon name="map-marker-multiple" type="MaterialCommunityIcons" style={Styles.headerIcon} />
+                        Las Vegas, USA
+                    </Text>
+                    <Text style={Styles.overviewTitle}>Trip Special</Text>
                     <View style={Styles.amenitiesRow}>
                         <Icon type="FontAwesome" name="stop" style={{fontSize: 5, color: '#39405B', marginTop:5}}/>                        
                         <View>
                             <Text style={Styles.amenitiesLabel}>
-                               4 GB RAM | 64 GB ROM | Expandable{"\n"}
-                               Upto 256 GB
+                              Native Ancestral/Historical
                             </Text>
                         </View>
                     </View>
@@ -142,7 +145,7 @@ export default class extends React.Component {
                         <Icon type="FontAwesome" name="stop" style={{fontSize: 5, color: '#39405B', marginTop:5}}/>                        
                         <View>
                             <Text style={Styles.amenitiesLabel}>
-                               15.9 cm (6.26inch)FHD + Display
+                               Giant Trees & Ancient Forests
                             </Text>
                         </View>
                     </View>
@@ -150,14 +153,38 @@ export default class extends React.Component {
                         <Icon type="FontAwesome" name="stop" style={{fontSize: 5, color: '#39405B', marginTop:5}}/>                        
                         <View>
                             <Text style={Styles.amenitiesLabel}>
-                               12MP + 5MP | 20MP + 2MP Dual Front Camera
+                               Canyons, Mesas & Hoodoos
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={Styles.amenitiesRow}>
+                        <Icon type="FontAwesome" name="stop" style={{fontSize: 5, color: '#39405B', marginTop:5}}/>                        
+                        <View>
+                            <Text style={Styles.amenitiesLabel}>
+                               Volcanic Peaks to Sparkling Shores
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={Styles.amenitiesRow}>
+                        <Icon type="FontAwesome" name="stop" style={{fontSize: 5, color: '#39405B', marginTop:5}}/>                        
+                        <View>
+                            <Text style={Styles.amenitiesLabel}>
+                               Geological Wonders
+                            </Text>
+                        </View>
+                    </View>
+                    <View style={Styles.amenitiesRow}>
+                        <Icon type="FontAwesome" name="stop" style={{fontSize: 5, color: '#39405B', marginTop:5}}/>                        
+                        <View>
+                            <Text style={Styles.amenitiesLabel}>
+                               Civil War Battlegrounds
                             </Text>
                         </View>
                     </View>
                 </View>
 
                 <View style={Styles.overview}>
-                    <Text style={Styles.overviewTitle}>Job Description</Text>
+                    <Text style={Styles.overviewTitle}>About Travel Place</Text>
                     <Text style={Styles.overviewDesc}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales vitae ligula eu hendrerit. Donec in magna sodales, semper urna et, gravida enim.
                     {"\n\n"}Etiam sagittis turpis a ligula finibus dignissim. Fusce fermentum diam sed vulputate fringilla. Integer interdum, sem sed tincidunt iaculis, odio ante ultricies libero, non tempus nisl erat non enim.
@@ -167,44 +194,7 @@ export default class extends React.Component {
                 </View>
 
             </Content>
-            <Modal isVisible={this.state.isFilterModalVisible}>
-                    <View style={Styles.signBg}>
-                        <View style={Styles.modalTopRow}>
-                            <View style={{ flexDirection: 'row'}}>
-                                <Icon type="FontAwesome"  name="filter" style={{color: '#39405B'}}/>
-                                <Text style={Styles.modalTitle}>Product Filter</Text>
-                            </View>                            
-                            <View style={Styles.modalButton}>
-                                <Button style={Styles.btnApply} onPress={this._toggleMobileModal}>
-                                    <Text style={Styles.applyBtnText}>{'apply'.toUpperCase()}</Text>                        
-                                </Button>
-                            </View>
-                        </View>
-                        <View style={Styles.modalRow}>
-                            <Text style={Styles.modalLabel}>Price</Text>
-                            <View style={Styles.formPicker}>
-                                <Picker
-                                    selectedValue={this.state.price}
-                                    onValueChange={(itemValue, itemIndex) => this.setState({ price: itemValue })}>
-                                    <Picker.Item label="Low" value="low" style={Styles.pickerText} />
-                                    <Picker.Item label="Medium" value="medium" />
-                                    <Picker.Item label="High" value="high" />
-                                </Picker>
-                            </View>
-                        </View>                            
-                        <View style={Styles.modalRow}>
-                            <Text style={Styles.modalLabel}>Product Categories</Text>
-                            <View>
-                                 {/* <Select 
-                                    value={selectedOption}
-                                    onChange={this.handleChange}
-                                    options={options} 
-                                /> */}
-                                <TextInput style={{borderRadius:5, borderWidth:1,borderColor: '#DDD'}} placeholder={'Enter Category'} />
-                            </View>
-                        </View>                            
-                    </View>
-                </Modal>  
+
             <View style={Style.footer}>
                 <View style={Style.fNav}>
                     <Button transparent style={Style.fBtn} onPress={() => {
@@ -242,7 +232,44 @@ export default class extends React.Component {
                     </Button>
                 </View>
             </View>
-                     
+            <Modal isVisible={this.state.isFilterModalVisible}>
+                <View style={Styles.signBg}>
+                    <View style={Styles.modalTopRow}>
+                        <View style={{ flexDirection: 'row'}}>
+                            <Icon type="FontAwesome"  name="filter" style={{color: '#39405B'}}/>
+                            <Text style={Styles.modalTitle}>Travel Filter</Text>
+                        </View>                            
+                        <View style={Styles.modalButton}>
+                            <Button style={Styles.btnApply} onPress={this._toggleMobileModal}>
+                                <Text style={Styles.applyBtnText}>{'apply'.toUpperCase()}</Text>                        
+                            </Button>
+                        </View>
+                    </View>
+                    <View style={Styles.modalRow}>
+                        <Text style={Styles.modalLabel}>Price</Text>
+                        <View style={Styles.formPicker}>
+                            <Picker
+                                selectedValue={this.state.price}
+                                onValueChange={(itemValue, itemIndex) => this.setState({ price: itemValue })}>
+                                <Picker.Item label="Low" value="low" style={Styles.pickerText} />
+                                <Picker.Item label="Medium" value="medium" />
+                                <Picker.Item label="High" value="high" />
+                            </Picker>
+                        </View>
+                    </View>                            
+                    <View style={Styles.modalRow}>
+                        <Text style={Styles.modalLabel}>Location</Text>
+                        <View>
+                                {/* <Select 
+                                value={selectedOption}
+                                onChange={this.handleChange}
+                                options={options} 
+                            /> */}
+                            <TextInput style={{borderRadius:5, borderWidth:1,borderColor: '#DDD'}} placeholder={'Enter Location'} />
+                        </View>
+                    </View>                            
+                </View>
+            </Modal>
         </Container>
     }
 }
