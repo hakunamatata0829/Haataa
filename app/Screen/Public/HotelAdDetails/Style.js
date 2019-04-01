@@ -60,13 +60,6 @@ export default {
   },
 
 
-  itemDate: {
-    color: '#999',
-    fontFamily: 'Montserrat-Regular',
-    fontSize: 10,
-    marginRight: 20,
-  },
-
 
 
   count: {
@@ -105,8 +98,7 @@ export default {
   overview: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 0,
-    paddingBottom: 20,
+    paddingVertical: 20,
   },
   overviewTitle: {
     flex: 1,
@@ -355,10 +347,7 @@ export default {
     flexDirection: 'row',
     marginBottom: 15,
   },
-  headerIcon: {
-    fontSize: 24,
-    color: '#333',
-  },
+  
   sHeader: {
     color: '#333',
     marginLeft: 3,
@@ -499,23 +488,45 @@ export default {
 
   itemTitle: {
     color: '#39405B',
-    fontSize: 12,
-    fontFamily: 'Montserrat-SemiBold',    
+    fontSize: 14,
+    fontFamily: 'Montserrat-SemiBold',
+    paddingHorizontal: 5,
+    paddingLeft:10,    
   },
 
   itemIcon: {
-    color: '#CCC',
-    marginRight: 5,
-    fontSize: 14,
+    color: '#333',
+    marginRight: 4,
+    marginTop: 6,
+    fontSize: 6,
   },
-
-  itemPosted: {
-    marginTop: 10,
-    color: '#999',
+  headerIcon:{
+      color: '#333',
+      marginRight: 2,
+      marginTop: 2,
+      fontSize: 12,
+  },
+  itemDate: {
+      color: '#999',
+      fontFamily: 'Montserrat-Regular',
+      fontSize: 12,
+      marginRight: 5,
+  },
+  popularTitle:{
+    color: '#333',
     fontFamily: 'Montserrat-Regular',
-    fontSize: 5,
-    paddingHorizontal: 20,
-    flexDirection: 'row',
+    fontSize: 12,
+    marginLeft: 10,
+    paddingTop:25,
+    paddingBottom:5,
+  },
+  itemPosted: {
+      marginTop: 0,
+      color: '#333',
+      fontFamily: 'Montserrat-Regular',
+      fontSize: 14,
+      paddingHorizontal: 10,
+      flexDirection: 'row',
   },
   itemLeft: {
     flexWrap: 'wrap',
@@ -524,8 +535,8 @@ export default {
   },
   itemRight: {
     flexWrap: 'wrap',
-    minWidth: '50%',
-    maxWidth: '60%',
+    minWidth: '60%',
+    maxWidth: '80%',
   },
 
   photo: {
@@ -571,18 +582,7 @@ export default {
     marginLeft: 10,
     marginTop: 0,
   },
-  picker: {
-    flex: 1,
-    backgroundColor: '#DDD',
-    color: '#39405B',
-    paddingLeft: 10,
-    paddingTop: 10,
-    paddingBottom: 10,
-    fontFamily: 'Montserrat-Regular',
-    
-    
-},
-pickers:{
+  pickers:{
     color: '#39405B',       
     paddingHorizontal: 20, 
 },
@@ -695,5 +695,4 @@ signBg: {
       color: '#39405B',       
       paddingHorizontal: 20, 
   }
-
 }

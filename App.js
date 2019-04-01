@@ -17,7 +17,11 @@ import PublicCars from '@Screen/Public/Cars'
 import PublicProperties from '@Screen/Public/Properties'
 import PublicShopping from '@Screen/Public/Shopping'
 import PublicTravel from '@Screen/Public/Travel'
+import PublicTravelAdDetails from '@Screen/Public/TravelAdDetails'
+import PublicTravelAds from '@Screen/Public/TravelAds'
 import PublicHotel from '@Screen/Public/Hotel'
+import PublicHotelAds from '@Screen/Public/HotelAds'
+import PublicHotelAdDetails from '@Screen/Public/HotelAdDetails'
 import PublicShopAds from '@Screen/Public/ShopAds'
 import PublicShopAdDetails from '@Screen/Public/ShopAdDetails'
 
@@ -96,8 +100,20 @@ const AppNav = createStackNavigator(
     PublicTravel: {
       screen: PublicTravel
     },
+    PublicTravelAdDetails: {
+      screen: PublicTravelAdDetails
+    },
+    PublicTravelAds: {
+      screen: PublicTravelAds
+    },
     PublicHotel: {
       screen: PublicHotel
+    },
+    PublicHotelAds: {
+      screen: PublicHotelAds
+    },
+    PublicHotelAdDetails: {
+      screen: PublicHotelAdDetails
     },
     PublicShopAds: {
       screen: PublicShopAds
