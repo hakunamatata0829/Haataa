@@ -30,6 +30,12 @@ const datas1 = [
     type: "Entypo",
   },
   {
+    name: "Advertising Policy",
+    route: "PublicAdPolicy",
+    icon: "news",
+    type: "Entypo",
+  },
+  {
     name: "Ad Detail",
     route: "PublicAdsDetail",
     icon: "newspaper-o",
@@ -45,7 +51,7 @@ const datas1 = [
     icon: "newspaper-o",    
   },
   {
-    name: "Properties",
+    name: "Property",
     route: "PublicProperties",
     icon: "group",    
   },

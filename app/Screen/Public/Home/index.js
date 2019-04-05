@@ -98,7 +98,7 @@ export default class extends React.Component {
                             NavigationService.navigate('PublicAds')
                         }}>
                             <Image source={require('@Asset/images/btn-car.png')} style={Styles.btnImg} />
-                            <Text style={Styles.btnText}>Cars</Text>
+                            <Text style={Styles.btnText}>Cars & Motors</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={Styles.btnBoxRight} onPress={() => {

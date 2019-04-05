@@ -7,6 +7,7 @@ import DrawerContent from '@Component/Menu/Left'
 import PublicIntro from '@Screen/Public/Intro'
 import PublicHome from '@Screen/Public/Home'
 import PublicAds from '@Screen/Public/Ads'
+import PublicAdPolicy from '@Screen/Public/AdPolicy'
 import PublicAdsDetail from '@Screen/Public/AdsDetail'
 import PublicAdsSearch from '@Screen/Public/AdsSearch'
 import PublicMembers from '@Screen/Public/Members'
@@ -75,6 +76,9 @@ const AppNav = createStackNavigator(
     },
     PublicAdsDetail: {
       screen: PublicAdsDetail
+    },
+    PublicAdPolicy: {
+      screen: PublicAdPolicy
     },
     PublicMembers: {
       screen: PublicMembers
